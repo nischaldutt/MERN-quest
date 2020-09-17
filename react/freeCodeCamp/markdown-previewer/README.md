@@ -1,5 +1,5 @@
-# Random Quote Generator
-Project is hosted live at: https://random-quote-generator-freecodecamp.netlify.app/
+# Markdown Previewer
+Project is hosted live at: https://markdown-previewer-freecodecamp.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
