@@ -1,0 +1,523 @@
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+
+#clock {
+  font-family: 'Montserrat', sans-serif;
+  width: 40vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px black;
+
+  #head {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    font-size: 3vw;
+    padding: 2vw;
+    text-align: center;
+    background-color: #011936;
+    color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  #breakPad {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    padding: 1vw;
+    font-size: 1.8vw;
+    background-color: #C21F40;
+    border-bottom-left-radius: 10px;
+    color: #F4FFFD;
+    
+    #break-label {
+      padding: 1vw;
+      text-align: center;
+    }
+
+    #breakControls {
+      font-family: 'Digital';
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      #break-increment {
+        font-weight: bolder;
+        font-size: 2vw;
+        color: white;
+        background-color: #011936;
+        border: 2px solid #011936;
+        border-radius: 5px;
+        &:hover {
+          background-color: #F4FFFD;
+          color: #011936;
+        }
+      }
+
+      #break-length {
+        padding: 1vw;
+        font-weight: bolder;
+        font-size: 2vw;
+      }
+
+      #break-decrement {
+        font-weight: bolder;
+        font-size: 2vw;
+        font-weight: bolder;
+        font-size: 2vw;
+        color: white;
+        background-color: #011936;
+        border: 2px solid #011936;
+        border-radius: 5px;
+        &:hover {
+          background-color: #F4FFFD;
+          color: #011936;
+        }
+      }
+    }
+  }
+
+  #sessionPad {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    padding: 1vw;
+    font-size: 1.8vw;
+    background-color: #C21F40;
+    border-bottom-right-radius: 10px;
+    color: #F4FFFD;
+
+    #session-label {
+      padding: 1vw;
+      text-align: center;
+    }
+
+    #sessionControls {
+      font-family: 'Digital';
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      #session-increment {
+        font-weight: bolder;
+        font-size: 2vw;
+        font-weight: bolder;
+        font-size: 2vw;
+        color: white;
+        background-color: #011936;
+        border: 2px solid #011936;
+        border-radius: 5px;
+        &:hover {
+          background-color: #F4FFFD;
+          color: #011936;
+        }
+      }
+
+      #session-length {
+        color: #F4FFFD;
+        padding: 1vw;
+        font-weight: bolder;
+        font-size: 2vw;
+      }
+
+      #session-decrement {
+        font-weight: bolder;
+        font-size: 2vw;
+        font-weight: bolder;
+        font-size: 2vw;
+        color: white;
+        background-color: #011936;
+        border: 2px solid #011936;
+        border-radius: 5px;
+        &:hover {
+          background-color: #F4FFFD;
+          color: #011936;
+        }
+      }
+    }
+  }
+
+  #timer {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    padding: 1vw;
+    font-size: 3vw;
+    background-color: #F4FFFD;
+    
+    #timerBlock {
+      text-align: center;
+
+      #time-left {
+        font-family: 'Digital';
+        font-size: 4vw;
+      }
+    }
+  }
+
+  #controls {
+    width: 100%;
+    justify-self: center;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ED254E;
+
+    #start_stop {
+      background-color: #011936;
+      border: 2px solid #011936;
+      color: white;
+      cursor: pointer;
+      font-weight: bolder;
+      font-size: 2vw;
+      width: 30%;
+      height: 50%;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #F4FFFD;
+        color: #011936;
+      }
+    }
+
+    #reset {
+      background-color: #011936;
+      border: 2px solid #011936;
+      color: white;
+      cursor: pointer;
+      font-weight: bolder;
+      font-size: 2vw;
+      width: 30%;
+      height: 50%;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #F4FFFD;
+        color: #011936;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #clock {
+    width: 70vw;
+    height: 80vh;
+
+    #head {
+      font-size: 6vw;
+      padding: 4vw;
+    }
+  
+    #breakPad {
+
+      #break-label {
+
+      }
+
+      #breakControls {
+
+        #break-decrement {
+          height: 8vh;
+        }
+
+        #break-length {
+          padding: 2vw;
+          font-size: 3vw;
+        }
+
+        #break-increment {
+          height: 8vh;
+        }
+      }
+    }
+  
+    #sessionPad {
+
+      #session-label {
+
+      }
+
+      #sessionControls {
+
+        #session-decrement {
+          height: 8vh;
+        }
+
+        #session-length {
+          padding: 2vw;
+          font-size: 3vw;
+        }
+
+        #session-increment {
+          height: 8vh;
+        }
+      }
+    }
+  
+    #timer {
+      font-size: 4vw;
+      padding: 2vw;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #clock {
+    width: 60vw;
+
+    #head {
+      font-size: 6vw;
+      padding: 6vw;
+    }
+  
+    #breakPad {
+
+      #break-label {
+
+      }
+
+      #breakControls {
+
+        #break-decrement {
+          height: 8vh;
+          font-size: 5vw;
+        }
+
+        #break-length {
+          padding: 2vw;
+          font-size: 5vw;
+        }
+
+        #break-increment {
+          height: 8vh;
+          font-size: 5vw;
+        }
+      }
+    }
+  
+    #sessionPad {
+
+      #session-label {
+
+      }
+
+      #sessionControls {
+
+        #session-decrement {
+          height: 8vh;
+          font-size: 5vw;
+        }
+
+        #session-length {
+          padding: 2vw;
+          font-size: 5vw;
+        }
+
+        #session-increment {
+          height: 8vh;
+          font-size: 5vw;
+        }
+      }
+    }
+  
+    #timer {
+      font-size: 6vw;
+      padding: 2vw;
+
+      #timerBlock {
+
+        #time-left {
+          font-size: 8vw;
+        }
+      }
+    }
+    #controls {
+      
+      #start_stop {
+        font-size: 3vw;
+      }
+  
+      #reset {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #clock {
+    width: 70vw;
+
+    #head {
+      font-size: 5vw;
+      padding: 5vw;
+    }
+
+    #breakPad {
+
+      #break-label {
+        font-size: 3vw;
+        padding: 4vw;
+      }
+
+      #breakControls {
+
+        #break-decrement {
+          height: 12vh;
+          font-size: 5vw;
+        }
+
+        #break-length {
+          padding: 4vw;
+          font-size: 4vw;
+        }
+
+        #break-increment {
+          height: 12vh;
+          font-size: 5vw;
+        }
+      }
+    }
+  
+    #sessionPad {
+
+      #session-label {
+        font-size: 3vw;
+        padding: 4vw;
+      }
+
+      #sessionControls {
+
+        #session-decrement {
+          height: 12vh;
+          font-size: 5vw;
+        }
+
+        #session-length {
+          padding: 4vw;
+          font-size: 4vw;
+        }
+
+        #session-increment {
+          height: 12vh;
+          font-size: 5vw;
+        }
+      }
+    }
+  
+    #timer {
+      font-size: 5vw;
+      padding: 1vw;
+
+      #timerBlock {
+
+        #time-left {
+          font-size: 10vw;
+        }
+      }
+    }
+    #controls {
+      
+      #start_stop {
+        font-size: 4vw;
+      }
+  
+      #reset {
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #clock {
+    width: 85vw;
+
+    #head {
+      font-size: 8vw;
+      padding: 10vw;
+    }
+
+    #breakPad {
+
+      #break-label {
+        font-size: 4vw;
+        padding: 4vw;
+      }
+
+      #breakControls {
+
+        #break-decrement {
+          height: 7vh;
+          font-size: 5vw;
+        }
+
+        #break-length {
+          padding: 5vw;
+          font-size: 5vw;
+        }
+
+        #break-increment {
+          height: 7vh;
+          font-size: 5vw;
+        }
+      }
+    }
+  
+    #sessionPad {
+
+      #session-label {
+        font-size: 4vw;
+        padding: 4vw;
+      }
+
+      #sessionControls {
+
+        #session-decrement {
+          height: 7vh;
+          font-size: 5vw;
+        }
+
+        #session-length {
+          padding: 5vw;
+          font-size: 5vw;
+        }
+
+        #session-increment {
+          height: 7vh;
+          font-size: 5vw;
+        }
+      }
+    }
+  
+    #timer {
+      font-size: 10vw;
+      padding: 3vw;
+
+      #timerBlock {
+
+        #time-left {
+          font-size: 12vw;
+        }
+      }
+    }
+    #controls {
+      
+      #start_stop {
+        font-size: 5vw;
+      }
+  
+      #reset {
+        font-size: 5vw;
+      }
+    }
+  }
+}
