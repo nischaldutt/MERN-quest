@@ -1,4 +1,4 @@
-# The Movie Pedia
+# The MoviePedia
 
 ### App hosted live at: https://themoviepedia.netlify.app/
 
