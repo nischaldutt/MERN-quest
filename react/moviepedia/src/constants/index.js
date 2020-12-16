@@ -1,0 +1,4 @@
+export const FETCH_POPULAR_MOVIES = "FETCH_POPULAR_MOVIES";
+export const FETCH_TOP_RATED_MOVIES = "FETCH_TOP_RATED_MOVIES";
+export const FETCH_UPCOMING_MOVIES = "FETCH_UPCOMING_MOVIES";
+export const MOVIE_POSTER_LINK = "http://image.tmdb.org/t/p/w500";
