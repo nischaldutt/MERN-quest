@@ -2,7 +2,13 @@ import React from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import { connect } from "react-redux";
 
-const Quote = ({ quote: { data } }) => {
+import { fetchNewQuote } from "../redux/actions";
+
+const Quote = ({ quote: { data }, fetchNewQuote }) => {
+  React.useEffect(() => {
+    fetchNewQuote();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.quoteHeader}>Quote of the day</Text>
@@ -45,6 +51,8 @@ const mapStateToProps = (state, ownProps) => ({
   quote: state.quote,
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  fetchNewQuote,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quote);
