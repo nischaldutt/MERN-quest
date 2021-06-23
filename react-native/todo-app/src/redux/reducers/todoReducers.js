@@ -1,7 +1,5 @@
 import {
   ALL_TODOS,
-  COMPLETED_TODOS,
-  INCOMPLETE_TODOS,
 } from "../../properties/constants";
 
 import {
