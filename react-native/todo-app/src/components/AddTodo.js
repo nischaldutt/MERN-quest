@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 
 import { Button } from "react-native-elements";
 
-import { addNewTodoItem } from "../redux/actions";
+import { addNewTodoItem, fetchNewQuote } from "../redux/actions";
 
-const AddTodo = ({ addNewTodoItem, renderEmptyInputAlert }) => {
+const AddTodo = ({ addNewTodoItem, renderEmptyInputAlert, fetchNewQuote }) => {
   const [description, setDescription] = React.useState("");
 
   const handleSubmit = () => {
@@ -14,6 +14,7 @@ const AddTodo = ({ addNewTodoItem, renderEmptyInputAlert }) => {
     if (description.trim() !== "") {
       addNewTodoItem(description);
       setDescription("");
+      fetchNewQuote();
     } else {
       renderEmptyInputAlert();
     }
@@ -72,5 +73,6 @@ const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = {
   addNewTodoItem,
+  fetchNewQuote,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

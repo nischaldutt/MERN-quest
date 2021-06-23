@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, Alert } from "react-native";
 import { connect } from "react-redux";
 
 import AddTodo from "../components/AddTodo";
+import Quote from "../components/Quote";
 import TodoItem from "../components/TodoItem";
 import StatusTabs from "../components/StatusTabs";
 import {
@@ -71,6 +72,9 @@ const TodoScreen = ({ todos, currentTodosStatus }) => {
     <View style={styles.container}>
       {/* Add new Todo */}
       <AddTodo renderEmptyInputAlert={renderEmptyInputAlert} />
+
+      {/* Render motivational quote */}
+      <Quote />
 
       {/* Render Todo Items */}
       <Text style={styles.todoListHead}>{currentTodoHeader}</Text>

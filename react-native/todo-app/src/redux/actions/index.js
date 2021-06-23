@@ -4,6 +4,7 @@ import {
   COMPLETE_TODO_ITEM,
   EDIT_TODO_ITEM,
   CHANGE_CURRENT_TODOS_STATUS,
+  FETCH_NEW_QUOTE,
 } from "./types";
 
 export const addNewTodoItem = (description) => {
@@ -38,5 +39,11 @@ export const changeCurrentTodosStatus = (selectedStatus) => {
   return {
     type: CHANGE_CURRENT_TODOS_STATUS,
     payload: selectedStatus,
+  };
+};
+
+export const fetchNewQuote = () => {
+  return {
+    type: FETCH_NEW_QUOTE,
   };
 };

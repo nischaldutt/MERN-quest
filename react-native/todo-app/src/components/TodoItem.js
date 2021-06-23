@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     width: 200,
     display: "flex",
     flexWrap: "wrap",
+    fontSize: 16
   },
   strikeThroughText: {
     textDecorationLine: "line-through",
