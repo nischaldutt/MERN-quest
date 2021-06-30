@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import { connect } from "react-redux";
 
-import { fetchNewQuote } from "../redux/actions";
+import { fetchNewQuote } from "../redux/actions/todoActions";
 
 const Quote = ({ quote: { data }, fetchNewQuote }) => {
   React.useEffect(() => {
@@ -14,7 +14,7 @@ const Quote = ({ quote: { data }, fetchNewQuote }) => {
       <Text style={styles.quoteHeader}>Quote of the day</Text>
       {data ? (
         <View>
-          <Text style={styles.quoteText}>{data.text}</Text>
+          <Text style={styles.quoteText}>{data.quote}</Text>
           <Text style={styles.author}>{data.author}</Text>
         </View>
       ) : (

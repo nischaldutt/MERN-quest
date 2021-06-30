@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { Button } from "react-native-elements";
 
-import { changeCurrentTodosStatus } from "../redux/actions";
+import { changeCurrentTodosStatus } from "../redux/actions/todoActions";
 import {
   ALL_TODOS,
   COMPLETED_TODOS,

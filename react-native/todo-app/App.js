@@ -2,29 +2,25 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, View, SafeAreaView } from "react-native";
 import { Provider } from "react-redux";
-import { createStore, compose } from "redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import Header from "./src/components/Header";
-import TodoScreen from "./src/screens/TodoScreen";
+import { store, persistor } from "./src/redux/store";
+import StackNavigator from "./src/navigators/StackNavigator";
 
-import rootReducer from "./src/redux/store";
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers());
-
-export default function App() {
+const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.container}>
-          <StatusBar style="auto" />
-          <Header />
-          <TodoScreen />
-        </View>
-      </SafeAreaView>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.container}>
+            <StatusBar style="auto" />
+            <StackNavigator />
+          </View>
+        </SafeAreaView>
+      </PersistGate>
     </Provider>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -32,3 +28,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2B138",
   },
 });
+
+export default App;

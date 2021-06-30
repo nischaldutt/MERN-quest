@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 
 import { Button } from "react-native-elements";
 
-import { addNewTodoItem, fetchNewQuote } from "../redux/actions";
+import { renderEmptyInputAlert } from "./Alerts";
+import { addNewTodoItem, fetchNewQuote } from "../redux/actions/todoActions";
 
-const AddTodo = ({ addNewTodoItem, renderEmptyInputAlert, fetchNewQuote }) => {
+const AddTodo = ({ addNewTodoItem, fetchNewQuote }) => {
   const [description, setDescription] = React.useState("");
 
   const handleSubmit = () => {
@@ -16,7 +17,7 @@ const AddTodo = ({ addNewTodoItem, renderEmptyInputAlert, fetchNewQuote }) => {
       setDescription("");
       fetchNewQuote();
     } else {
-      renderEmptyInputAlert();
+      renderEmptyInputAlert("description");
     }
   };
 

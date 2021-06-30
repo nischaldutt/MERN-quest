@@ -10,19 +10,14 @@ import { connect } from "react-redux";
 
 import { Button, Icon } from "react-native-elements";
 
+import { renderEmptyInputAlert } from "./Alerts";
 import {
   removeTodoItem,
   completeTodoItem,
   editTodoItem,
-} from "../redux/actions";
+} from "../redux/actions/todoActions";
 
-const TodoItem = ({
-  item,
-  removeTodoItem,
-  completeTodoItem,
-  editTodoItem,
-  renderEmptyInputAlert,
-}) => {
+const TodoItem = ({ item, removeTodoItem, completeTodoItem, editTodoItem }) => {
   const [isEditing, setIsEditing] = React.useState(false);
   const { id, description, completed } = item;
   const [updatedDescription, setUpdatedDescription] =
@@ -43,7 +38,7 @@ const TodoItem = ({
       // set isEditing status to false
       handleEdit();
     } else {
-      renderEmptyInputAlert();
+      renderEmptyInputAlert("description");
     }
   };
 
@@ -60,7 +55,7 @@ const TodoItem = ({
       <TouchableOpacity style={styles.container} onPress={handleTodoItemPress}>
         <View style={styles.item}>
           {completed ? (
-            <Text style={{ ...styles.todoDesc, ...styles.strikeThroughText }}>
+            <Text style={[styles.todoDesc, styles.strikeThroughText]}>
               {description}
             </Text>
           ) : (
@@ -113,11 +108,10 @@ const styles = StyleSheet.create({
     width: 200,
     display: "flex",
     flexWrap: "wrap",
-    fontSize: 16
+    fontSize: 16,
   },
   strikeThroughText: {
     textDecorationLine: "line-through",
-    textDecorationStyle: "solid",
   },
   item: {
     backgroundColor: "#D9D9D9",
