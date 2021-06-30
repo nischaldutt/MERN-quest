@@ -1,6 +1,4 @@
-import {
-  ALL_TODOS,
-} from "../../properties/constants";
+import { ALL_TODOS } from "../../properties/constants";
 
 import {
   ADD_NEW_TODO_ITEM,
@@ -8,6 +6,7 @@ import {
   COMPLETE_TODO_ITEM,
   EDIT_TODO_ITEM,
   CHANGE_CURRENT_TODOS_STATUS,
+  SIGNED_OUT,
 } from "../actions/types";
 
 const initialTodos = [
@@ -44,7 +43,7 @@ export const todosReducer = (state = initialTodos, action) => {
         if (todoItem.id === action.payload) {
           todoItem.completed = true;
         }
-        return todoItem;
+        return { ...todoItem };
       });
     }
 
@@ -55,7 +54,7 @@ export const todosReducer = (state = initialTodos, action) => {
           todoItem.description = description;
           todoItem.completed = completed;
         }
-        return todoItem;
+        return { ...todoItem };
       });
     }
 

@@ -9,16 +9,7 @@ import {
 
 // get and set new quote saga
 const fetchNewQuote = async () => {
-  const {
-    data: {
-      quotes: [quote],
-    },
-  } = await api.get("/api/v1/random/1", {
-    params: {
-      type: "tag",
-      val: "motivational",
-    },
-  });
+  const { data: quote } = await api.get("/");
   return quote;
 };
 

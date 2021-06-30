@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, FlatList, Alert } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { connect } from "react-redux";
 
 import AddTodo from "../components/AddTodo";
@@ -39,19 +39,9 @@ const TodoScreen = ({ todos, currentTodosStatus }) => {
     });
   }, [currentTodosStatus, todos]);
 
-  const renderEmptyInputAlert = () => {
-    Alert.alert("Input Required!", "Task description cannot be empty.", [
-      {
-        text: "OK",
-      },
-    ]);
-  };
-
   const renderTodoItems = () => {
     return ({ item }) => {
-      return (
-        <TodoItem item={item} renderEmptyInputAlert={renderEmptyInputAlert} />
-      );
+      return <TodoItem item={item} />;
     };
   };
 
@@ -60,10 +50,10 @@ const TodoScreen = ({ todos, currentTodosStatus }) => {
       <Text style={styles.todoListEmpty}>Todo List is Empty!</Text>
     ) : (
       <FlatList
+        removeClippedSubviews={false}
         data={currentTodos}
         keyExtractor={(item) => item.id}
         renderItem={renderTodoItems()}
-        keyboardShouldPersistTaps="always"
       />
     );
   };
@@ -71,7 +61,7 @@ const TodoScreen = ({ todos, currentTodosStatus }) => {
   return (
     <View style={styles.container}>
       {/* Add new Todo */}
-      <AddTodo renderEmptyInputAlert={renderEmptyInputAlert} />
+      <AddTodo />
 
       {/* Render motivational quote */}
       <Quote />
@@ -90,6 +80,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     flex: 1,
+    backgroundColor: "#F2B138",
   },
   todoListHead: {
     fontSize: 30,
