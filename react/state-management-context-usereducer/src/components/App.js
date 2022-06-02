@@ -1,7 +1,13 @@
 import React from "react";
+import Blog from "./Blog";
+import { BlogProvider } from "../context/BlogContext";
 
 const App = () => {
-  return <div>hello context!</div>;
+  return (
+    <BlogProvider>
+      <Blog />
+    </BlogProvider>
+  );
 };
 
 export default App;
