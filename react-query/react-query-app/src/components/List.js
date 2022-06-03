@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useSuperHeroes from "../hooks/useSuperHeroes";
 
 const List = () => {
@@ -12,12 +13,14 @@ const List = () => {
     return <div>{error.message}</div>;
   }
 
-  console.log({ data });
-
   return (
     <div>
       {data?.data.map((item) => {
-        return <div key={item.id}>{item.name}</div>;
+        return (
+          <div key={item.id}>
+            <Link to={`/superhero/${item.id}`}>{item.name}</Link>
+          </div>
+        );
       })}
     </div>
   );
