@@ -1,16 +1,8 @@
 import React from "react";
-import { useQuery } from "react-query";
-import axios from "axios";
-
-const fetchSuperHeroes = () => {
-  return axios.get("http://localhost:4000/superheroes");
-};
+import useSuperHeroes from "../hooks/useSuperHeroes";
 
 const List = () => {
-  const { isLoading, data, isError, error } = useQuery(
-    "superheroes",
-    fetchSuperHeroes
-  );
+  const { isLoading, data, isError, error } = useSuperHeroes();
 
   if (isLoading) {
     return <div>loading</div>;
