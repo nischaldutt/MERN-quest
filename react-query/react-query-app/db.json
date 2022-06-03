@@ -2,15 +2,18 @@
   "superheroes": [
     {
       "id": 1,
-      "name": "batman"
+      "name": "batman",
+      "alterEgo": "bruce wayne"
     },
     {
       "id": 2,
-      "name": "superman"
+      "name": "superman",
+      "alterEgo": "clarke kent"
     },
     {
       "id": 3,
-      "name": "thor"
+      "name": "thor",
+      "alterEgo": "thor ;)"
     }
   ]
 }
