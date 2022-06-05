@@ -6,7 +6,11 @@ const fetchSuperHeroes = () => {
 };
 
 const useSuperHeroes = () => {
-  return useQuery("superheroes", fetchSuperHeroes);
+  return useQuery("superheroes", fetchSuperHeroes, {
+    cacheTime: 10000,
+    // staleTime: 10000,
+    // select: () => {},
+  });
 };
 
 export default useSuperHeroes;
