@@ -15,5 +15,59 @@
       "name": "thor",
       "alterEgo": "thor ;)"
     }
+  ],
+  "users": [
+    {
+      "email": "nischaldutt01@gmail.com",
+      "channelId": "gh2f4b32h4324b32"
+    }
+  ],
+  "courses": [
+    {
+      "channelId": "gh2f4b32h4324b32",
+      "courses": ["reactjs", "nextjs", "blockchain"]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "name": "red"
+    },
+    {
+      "id": 2,
+      "name": "green"
+    },
+    {
+      "id": 3,
+      "name": "yellow"
+    },
+    {
+      "id": 4,
+      "name": "blue"
+    },
+    {
+      "id": 5,
+      "name": "brown"
+    },
+    {
+      "id": 6,
+      "name": "sky-blue"
+    },
+    {
+      "id": 7,
+      "name": "orange"
+    },
+    {
+      "id": 8,
+      "name": "black"
+    },
+    {
+      "id": 9,
+      "name": "pink"
+    },
+    {
+      "id": 10,
+      "name": "white"
+    }
   ]
 }

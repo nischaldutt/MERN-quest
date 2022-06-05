@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <div>
       <div>hello world!</div>
-      <Link to="/superheroes">View</Link>
+      <Link to="/superheroes">view</Link>
+      <br />
+      <Link to="/colors">infinite queries</Link>
     </div>
   );
 };
