@@ -28,7 +28,7 @@ const Details = () => {
           <React.Fragment key={index}>
             {group.data.map((color) => {
               return (
-                <div>
+                <div key={color.id}>
                   {color.id} . {color.name}
                 </div>
               );

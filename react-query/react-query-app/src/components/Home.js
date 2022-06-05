@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useMutation, useQueryClient } from "react-query";
+import { request } from "../utils/requestInterceptor";
 
 import List from "./List";
 
 const addSuperHero = (hero) => {
-  return axios.post("http://localhost:4000/superheroes", hero);
+  // return axios.post("http://localhost:4000/superheroes", hero);
+  return request({ url: "/superheroes", method: "post", data: hero });
 };
 
 const Home = () => {
