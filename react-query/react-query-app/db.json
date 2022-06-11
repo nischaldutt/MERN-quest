@@ -73,5 +73,22 @@
       "id": 10,
       "name": "white"
     }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Microsoft",
+      "ceo": "Satya Nadela"
+    },
+    {
+      "id": 2,
+      "name": "Meta",
+      "alterEgo": "Mark Zuckerberg"
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "alterEgo": "Steve Jobs"
+    }
   ]
 }
