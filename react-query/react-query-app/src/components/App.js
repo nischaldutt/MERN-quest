@@ -7,6 +7,7 @@ import Home from "./Home";
 import List from "./List";
 import Details from "./Details";
 import Colors from "./Colors";
+import Companies from "./Companies";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/superheroes" element={<List />} />
           <Route path="/superhero/:id" element={<Details />} />
           <Route path="/colors" element={<Colors />} />
+          <Route path="/companies" element={<Companies />} />
         </Routes>
 
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
