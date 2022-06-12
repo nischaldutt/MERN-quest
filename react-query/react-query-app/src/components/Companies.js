@@ -16,8 +16,13 @@ const Companies = () => {
     isFetching,
     refetch,
   } = useQuery("companies", fetchCompanies, {
-    cacheTime: 20000,
-    staleTime: 10000,
+    // cacheTime: 20000,
+    // staleTime: 10000,
+    // refetchOnMount: true,
+    // refetchOnWindow: true,
+    // refetchInterval: 5000,
+    // refetchIntervalInBackground: true,
+    enabled: false,
   });
 
   console.log({ isLoading, isFetching });
@@ -32,10 +37,10 @@ const Companies = () => {
 
   return (
     <div>
-      {companies.map((company) => {
+      {companies?.map((company) => {
         return <h1 key={company.id}>{company.name}</h1>;
       })}
-      <button onClick={refetch}>refetch</button>
+      <button onClick={refetch}>fetch</button>
     </div>
   );
 };
