@@ -34,8 +34,12 @@ const Companies = () => {
     // refetchInterval: 5000,
     // refetchIntervalInBackground: true,
     // enabled: false,
-    onSuccess,
-    onError,
+    // onSuccess,
+    // onError,
+    select: (data) => {
+      const founders = data.map((company) => company.founder);
+      return founders;
+    },
   });
 
   // console.log({ isLoading, isFetching });
