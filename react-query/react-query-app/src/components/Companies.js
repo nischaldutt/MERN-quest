@@ -8,6 +8,17 @@ async function fetchCompanies() {
 }
 
 const Companies = () => {
+  const onSuccess = (data) => {
+    console.log(
+      "performing the side-effect after successful fetch with response ==> ",
+      data
+    );
+  };
+
+  const onError = (error) => {
+    console.log("encounter an error during fetching ==> ", error);
+  };
+
   const {
     isLoading,
     data: companies,
@@ -22,10 +33,12 @@ const Companies = () => {
     // refetchOnWindow: true,
     // refetchInterval: 5000,
     // refetchIntervalInBackground: true,
-    enabled: false,
+    // enabled: false,
+    onSuccess,
+    onError,
   });
 
-  console.log({ isLoading, isFetching });
+  // console.log({ isLoading, isFetching });
 
   if (isLoading) {
     return <h1>loading</h1>;
