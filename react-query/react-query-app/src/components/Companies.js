@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
 async function fetchCompanies() {
@@ -36,10 +37,10 @@ const Companies = () => {
     // enabled: false,
     // onSuccess,
     // onError,
-    select: (data) => {
-      const founders = data.map((company) => company.founder);
-      return founders;
-    },
+    // select: (data) => {
+    //   const founders = data.map((company) => company.founder);
+    //   return founders;
+    // },
   });
 
   // console.log({ isLoading, isFetching });
@@ -55,7 +56,11 @@ const Companies = () => {
   return (
     <div>
       {companies?.map((company) => {
-        return <h1 key={company.id}>{company.name}</h1>;
+        return (
+          <h1 key={company.id}>
+            <Link to={`/companies/${company.id}`}>{company.name}</Link>
+          </h1>
+        );
       })}
       <button onClick={refetch}>fetch</button>
     </div>
