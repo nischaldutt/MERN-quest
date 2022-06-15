@@ -83,12 +83,12 @@
     {
       "id": 2,
       "name": "Meta",
-      "alterEgo": "Mark Zuckerberg"
+      "ceo": "Mark Zuckerberg"
     },
     {
       "id": 3,
       "name": "Apple",
-      "alterEgo": "Steve Jobs"
+      "ceo": "Tim Cook"
     }
   ]
 }
