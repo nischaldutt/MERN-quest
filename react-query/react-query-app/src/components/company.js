@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useQuery, useQueries } from "react-query";
 
 const fetchCompany = ({ queryKey }) => {
   const id = queryKey[1];
@@ -9,27 +9,40 @@ const fetchCompany = ({ queryKey }) => {
   );
 };
 
+const componyIds = [1, 2, 3];
+
 const Company = () => {
   const { id } = useParams();
-  const {
-    isLoading,
-    data: companyData,
-    isError,
-    error,
-  } = useQuery(["company", id], fetchCompany);
+  // const {
+  //   isLoading,
+  //   data: companyData,
+  //   isError,
+  //   error,
+  // } = useQuery(["company", id], fetchCompany);
 
-  if (isLoading) {
-    return <h1>loading</h1>;
-  }
+  const response = useQueries(
+    componyIds.map((id) => {
+      return {
+        queryKey: ["company", id],
+        queryFn: fetchCompany,
+      };
+    })
+  );
 
-  if (isError) {
-    return <h1>{error.message}</h1>;
-  }
+  console.log({ response });
+
+  // if (isLoading) {
+  //   return <h1>loading</h1>;
+  // }
+
+  // if (isError) {
+  //   return <h1>{error.message}</h1>;
+  // }
 
   return (
     <div>
-      <h2>{companyData.name}</h2>
-      <h2>{companyData.ceo}</h2>
+      {/* <h2>{companyData.name}</h2>
+      <h2>{companyData.ceo}</h2> */}
     </div>
   );
 };
