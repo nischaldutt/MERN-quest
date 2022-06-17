@@ -104,5 +104,26 @@
       "name": "Apple",
       "ceo": "Tim Cook"
     }
+  ],
+  "companyDetails": [
+    {
+      "id": 1,
+      "name": "Microsoft",
+      "ceo": "Satya Nadela",
+      "founder": "Bill Gates"
+    },
+    {
+      "id": 2,
+      "name": "Meta",
+      "ceo": "Mark Zuckerberg",
+      "founder": "Mark Zukerberg"
+
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "ceo": "Tim Cook",
+      "founder": "Steve Jobs"
+    }
   ]
 }
