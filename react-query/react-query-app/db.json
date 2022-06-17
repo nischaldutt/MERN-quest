@@ -16,19 +16,33 @@
       "alterEgo": "thor ;)"
     }
   ],
-  "users": [
+  "githubUsers": [
     {
-      "email": "nischaldutt01@gmail.com",
-      "channelId": "gh2f4b32h4324b32"
+      "id": "jack@gmail.com",
+      "githubId": "gf6ds5g4d5sf1g65dsf"
+    },
+    {
+      "id": "micheal@gmail.com",
+      "githubId": "gf6ds5g4d5sa3g65dsf"
     }
   ],
-  "courses": [
+  "githubRepositories": [
     {
-      "channelId": "gh2f4b32h4324b32",
-      "courses": [
-        "reactjs",
-        "nextjs",
-        "blockchain"
+      "id": "gf6ds5g4d5sf1g65dsf",
+      "repositories": [
+        "jack/react",
+        "jack/next",
+        "jack/angular",
+        "jack/vue"
+      ]
+    },
+    {
+      "id": "gf6ds5g4d5sa3g65dsf",
+      "repositories": [
+        "micheal/react",
+        "micheal/next",
+        "micheal/angular",
+        "micheal/vue"
       ]
     }
   ],
