@@ -9,6 +9,7 @@ import Details from "./Details";
 import Colors from "./Colors";
 import Companies from "./Companies";
 import Company from "./company";
+import DependantQueries from "./DependantQueries";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/colors" element={<Colors />} />
           <Route path="/companies" element={<Companies />} />
           <Route path="/companies/:id" element={<Company />} />
+          <Route path="/github" element={<DependantQueries />} />
         </Routes>
 
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
