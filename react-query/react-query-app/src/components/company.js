@@ -32,7 +32,6 @@ const Company = () => {
       const cachedCompanyData = queryClient
         .getQueryData("companies")
         .find((cachedCompany) => cachedCompany.id === parseInt(id));
-
       console.log({ cachedCompanyData });
       return cachedCompanyData ? cachedCompanyData : undefined;
     },
@@ -62,6 +61,7 @@ const Company = () => {
       <h2>name: {companyData.name}</h2>
       <h2>ceo: {companyData.ceo}</h2>
       <h2>founder: {companyData.founder}</h2>
+      <h2>headquarters: {companyData.headQuarters}</h2>
     </div>
   );
 };
