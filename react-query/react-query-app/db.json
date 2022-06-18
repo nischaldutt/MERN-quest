@@ -104,5 +104,28 @@
       "name": "Apple",
       "ceo": "Tim Cook"
     }
+  ],
+  "companyDetails": [
+    {
+      "id": 1,
+      "name": "Microsoft",
+      "ceo": "Satya Nadela",
+      "founder": "Bill Gates",
+      "headQuarters": "Redmond, Washington, United States"
+    },
+    {
+      "id": 2,
+      "name": "Meta",
+      "ceo": "Mark Zuckerberg",
+      "founder": "Mark Zukerberg",
+      "headQuarters": "Menlo Park, California, United States"
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "ceo": "Tim Cook",
+      "founder": "Steve Jobs",
+      "headQuarters": "Cupertino, California, United States"
+    }
   ]
 }
