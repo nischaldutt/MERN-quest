@@ -1,5 +1,11 @@
 import React from "react";
-import useColors from "../hooks/useColors";
+import { useInfiniteQuery } from "react-query";
+
+const fetchColors = async ({ pageParam = 1 }) => {
+  return fetch(`http://localhost:4000/colors?_limit=2&_page=${pageParam}`).then(
+    (response) => response.json()
+  );
+};
 
 const Details = () => {
   const {
@@ -11,29 +17,29 @@ const Details = () => {
     isFetching,
     fetchNextPage,
     isFetchingNextPage,
-  } = useColors();
+  } = useInfiniteQuery("games", fetchColors, {
+    getNextPageParam: (_lastPage, pages) => {
+      return pages.length < 5 ? pages.length + 1 : undefined;
+    },
+  });
 
   if (isLoading) {
-    return <div>loading</div>;
+    return <h4>loading</h4>;
   }
 
   if (isError) {
-    return <div>{error.message}</div>;
+    return <h4>{error.message}</h4>;
   }
 
   return (
     <div>
       {data?.pages.map((group, index) => {
         return (
-          <React.Fragment key={index}>
-            {group.data.map((color) => {
-              return (
-                <div key={color.id}>
-                  {color.id} . {color.name}
-                </div>
-              );
+          <div key={index}>
+            {group.map((game) => {
+              return <h3 key={game.id}>{game.name}</h3>;
             })}
-          </React.Fragment>
+          </div>
         );
       })}
 

@@ -49,43 +49,43 @@
   "colors": [
     {
       "id": 1,
-      "name": "red"
+      "name": "League of Legends"
     },
     {
       "id": 2,
-      "name": "green"
+      "name": "Valorant"
     },
     {
       "id": 3,
-      "name": "yellow"
+      "name": "Minecraft"
     },
     {
       "id": 4,
-      "name": "blue"
+      "name": "Fortnite"
     },
     {
       "id": 5,
-      "name": "brown"
+      "name": "GTA V"
     },
     {
       "id": 6,
-      "name": "sky-blue"
+      "name": "FIFA 2022"
     },
     {
       "id": 7,
-      "name": "orange"
+      "name": "Among Us"
     },
     {
       "id": 8,
-      "name": "black"
+      "name": "Call of Duty: Warzone"
     },
     {
       "id": 9,
-      "name": "pink"
+      "name": "World of Warcraft"
     },
     {
       "id": 10,
-      "name": "white"
+      "name": "Rocket League"
     }
   ],
   "companies": [
