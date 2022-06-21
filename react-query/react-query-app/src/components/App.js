@@ -10,6 +10,7 @@ import Colors from "./Colors";
 import Companies from "./Companies";
 import Company from "./company";
 import DependantQueries from "./DependantQueries";
+import Paginated from "./Paginated";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/companies" element={<Companies />} />
           <Route path="/companies/:id" element={<Company />} />
           <Route path="/github" element={<DependantQueries />} />
+          <Route path="/paginated" element={<Paginated />} />
         </Routes>
 
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
