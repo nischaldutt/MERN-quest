@@ -11,6 +11,7 @@ import Companies from "./Companies";
 import Company from "./company";
 import DependantQueries from "./DependantQueries";
 import Paginated from "./Paginated";
+import Mutations from "./Mutations";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/companies/:id" element={<Company />} />
           <Route path="/github" element={<DependantQueries />} />
           <Route path="/paginated" element={<Paginated />} />
+          <Route path="/mutations" element={<Mutations />} />
         </Routes>
 
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
