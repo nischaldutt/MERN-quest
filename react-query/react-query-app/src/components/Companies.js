@@ -55,11 +55,12 @@ const Companies = () => {
 
   return (
     <div>
+      <h3>top companies list</h3>
       {companies?.map((company) => {
         return (
-          <h1 key={company.id}>
+          <h3 key={company.id}>
             <Link to={`/companies/${company.id}`}>{company.name}</Link>
-          </h1>
+          </h3>
         );
       })}
       <button onClick={refetch}>fetch</button>

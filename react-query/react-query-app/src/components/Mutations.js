@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useMutation, useQueryClient } from "react-query";
 import { request } from "../utils/requestInterceptor";
+import Companies from "./Companies";
 
 const addCompany = (newCompany) => {
   return axios.post("http://localhost:4000/companies", newCompany);
@@ -19,25 +20,27 @@ const Mutations = () => {
 
   const addCompanyData = () => {
     mutate({ name, ceo });
+    setName("");
+    setCeo("");
   };
 
   return (
     <div>
-      <div>enter company details</div>
-      <label>name</label>
+      <h1>enter company details</h1>
+      <h2>name</h2>
       <input
         type="text"
         onChange={(e) => setName(e.target.value)}
         value={name}
       />
-      <label>ceo</label>
+      <h2>ceo</h2>
       <input type="text" onChange={(e) => setCeo(e.target.value)} value={ceo} />
-
+      <br /> <br />
       <button type="submit" onClick={addCompanyData}>
         save
       </button>
-
-      <Link to="/companies">view</Link>
+      <br /> <br />
+      <Companies />
     </div>
   );
 };

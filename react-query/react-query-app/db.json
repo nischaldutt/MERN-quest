@@ -90,19 +90,19 @@
   ],
   "companies": [
     {
-      "id": 1,
-      "name": "Microsoft",
-      "ceo": "Satya Nadela"
+      "name": "apple",
+      "ceo": "tim cook",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Meta",
-      "ceo": "Mark Zuckerberg"
+      "name": "spacex",
+      "ceo": "elon musk",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Apple",
-      "ceo": "Tim Cook"
+      "name": "google",
+      "ceo": "sergey brinn",
+      "id": 3
     }
   ],
   "companyDetails": [
