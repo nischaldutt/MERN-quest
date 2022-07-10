@@ -15,7 +15,7 @@ const Mutations = () => {
   const [name, setName] = React.useState("");
   const [ceo, setCeo] = React.useState("");
   const { mutate, isLoading, isError, error } = useMutation(addCompany, {
-    // onSuccess: () => queryClient.invalidateQueries("superheroes"),
+    onSuccess: () => queryClient.invalidateQueries("companies"),
   });
 
   const addCompanyData = () => {
