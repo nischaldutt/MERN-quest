@@ -1,9 +1,9 @@
 <div>
   <h1 align="center">
-    <a href="https://github.com/nischaldutt/MERN-quest">🚀 Learning path: MERN Stack Development 🚀</a>
+    <a href="https://github.com/nischaldutt/MERN-quest">🚀 Learning path: Full-Stack Development 🚀</a>
   </h1>
   <strong>
-    Here I document my journey to learn MERN stack development.
+    Here I document my journey to learn Full-Stack development.
   </strong>
   <p>
     Folder Structure: Technology ➜ Source name ➜ Projects/Solutions of the exercises/courses I worked on
