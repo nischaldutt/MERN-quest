@@ -1,0 +1,11 @@
+body {
+  border: 2px solid black;
+  margin: 0;
+  padding: 25px 50px;
+  box-sizing: border-box;
+}
+
+.todoContainer {
+  margin: 10px 0px;
+  border: 2px solid black;
+}
