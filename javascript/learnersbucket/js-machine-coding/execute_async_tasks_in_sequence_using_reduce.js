@@ -9,24 +9,22 @@ function asyncTask() {
   });
 }
 
-const task1 = asyncTask();
-const task2 = asyncTask();
-const task3 = asyncTask();
-const task4 = asyncTask();
-const task5 = asyncTask();
+const task6 = () => asyncTask();
+const task7 = () => asyncTask();
+const task8 = () => asyncTask();
+const task9 = () => asyncTask();
+const task10 = () => asyncTask();
 
-const asyncOps = [task1, task2, task3, task4, task5];
+const asyncOperations = [task6, task7, task8, task9, task10];
 
-// using reduce to perform async tasks in sequence
-function myPromiseAll(asyncTasks, callback) {
+function executeAsyncTasksUsingReduce(tasks, callback) {
   const resolvedTasks = [];
   const rejectedTasks = [];
   let count = 0;
 
-  return asyncTasks.reduce((acc, curr, index, arr) => {
-    // irrespective of the prev promise, we process the curr promise*
+  tasks.reduce((acc, curr, index, arr) => {
     return acc.finally(() => {
-      return curr
+      return curr()
         .then((res) => resolvedTasks.push(res))
         .catch((err) => rejectedTasks.push(err))
         .finally(() => {
@@ -37,4 +35,6 @@ function myPromiseAll(asyncTasks, callback) {
   }, Promise.resolve());
 }
 
-myPromiseAll(asyncOps, (err, res) => console.log({ err, res }));
+executeAsyncTasksUsingReduce(asyncOperations, (err, res) =>
+  console.log({ err, res })
+);
