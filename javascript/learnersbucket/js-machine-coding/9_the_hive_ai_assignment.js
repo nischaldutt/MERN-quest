@@ -29,6 +29,7 @@ class PromiseSchedule {
 
     for (let i = this.currentFxnIndex; i < len; i++) {
       this.currentFxnIndex = i;
+      console.log(this.currentFxnIndex);
       if (this.isPaused === false) {
         try {
           const result = await this.fxnArray[i]();
@@ -111,5 +112,14 @@ const options = {
   },
 };
 
-const instance = new PromiseSchedule(fxnsArray, options);
-instance.run();
+async function test() {
+  const instance = new PromiseSchedule(fxnsArray, options);
+  instance.run();
+  await delay(4000);
+  instance.pause();
+  console.log(instance.getState());
+  await instance.runAllUnexecutedFunctions();
+  console.log(instance.getState());
+}
+
+test();
