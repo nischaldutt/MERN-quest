@@ -1,5 +1,7 @@
 // problem: https://github.com/ratracegrad/coderbyte-Beginner/blob/master/Letter%20Count%20I
 
+// time: O(n)
+
 function LetterCount(str) {
   let result = -1;
   const obj = {
