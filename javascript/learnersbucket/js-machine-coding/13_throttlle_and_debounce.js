@@ -6,9 +6,7 @@ function myFunction(a, b, c) {
 function debounce(fun, delay, ...args1) {
   const context = this;
   let timerId;
-  console.log({ timerId });
   return function (...args2) {
-    console.log({ timerId });
     clearTimeout(timerId);
     timerId = setTimeout(() => {
       fun.call(context, ...args1, ...args2);
