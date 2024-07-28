@@ -1,3 +1,7 @@
+// https://leetcode.com/discuss/interview-experience/1566225/atlassian-p5-bangalore-4th-oct-19th-oct-p4-offer
+
+// https://learnersbucket.com/examples/interview/circuit-breaker-in-javascript/
+
 function myFunction() {
   let count = 0;
   return function () {
