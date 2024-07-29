@@ -1,3 +1,7 @@
+// https://leetcode.com/discuss/interview-question/1169779/flipkart-ui-engineer
+
+// https://learnersbucket.com/examples/interview/piping-function-in-javascript-part-1/
+
 function pipe(obj) {
   const result = {};
 
