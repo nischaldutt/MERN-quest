@@ -18,3 +18,19 @@
   font-size: 40px;;
   color: #fff;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.progressBar {
+  background-color: red;
+  height: 10px;
+  margin: 5px 0 5px 0;
+  width: 0;
+}
+
+.loading {
+  width: 100%;
+}
