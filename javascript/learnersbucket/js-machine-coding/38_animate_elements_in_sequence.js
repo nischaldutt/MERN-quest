@@ -21,6 +21,8 @@ function create(delay) {
       create(3);
     }
   });
+
+  bar.removeEventListener("transitionend", () => {});
 }
 
 function add() {
