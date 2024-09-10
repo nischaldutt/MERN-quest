@@ -1,0 +1,38 @@
+.button {
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.7em 1.2em;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  min-width: 96px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid;
+  transition: background 0.2s ease;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.large {
+  font-size: 18px;
+}
+
+.basic {
+  background-color: blueviolet;
+  border-color: yellow;
+  color: #fff;
+}
+
+.basic:hover {
+  background-color: yellow;
+  border-color: blueviolet;
+  color: red;
+}
