@@ -1,0 +1,6 @@
+.portal {
+  border: 2px solid black;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
