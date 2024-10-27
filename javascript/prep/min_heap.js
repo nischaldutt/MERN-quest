@@ -34,7 +34,7 @@ class MyMinHeap {
     if (this.arr.length === 0) this.arr.push(value);
     else {
       this.arr.push(value);
-      for (let i = this.arr.length / 2 - 1; i >= 0; i--) {
+      for (let i = parseInt(this.arr.length / 2 - 1); i >= 0; i--) {
         this.minHeapify(i);
       }
     }
@@ -50,7 +50,7 @@ class MyMinHeap {
     [this.arr[len - 1], this.arr[index]] = [this.arr[index], this.arr[len - 1]];
     this.arr.pop();
 
-    for (let i = this.arr.length / 2 - 1; i >= 0; i--) this.minHeapify(i);
+    for (let i = parseInt(this.arr.length / 2 - 1);; i >= 0; i--) this.minHeapify(i);
   }
 
   findMin() {

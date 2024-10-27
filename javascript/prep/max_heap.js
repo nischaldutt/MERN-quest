@@ -36,7 +36,7 @@ class MyMaxHeap {
       return;
     } else {
       this.arr.push(value);
-      for (let i = this.arr.length / 2 - 1; i >= 0; i--) {
+      for (let i = parseInt(this.arr.length / 2 - 1); i >= 0; i--) {
         this.maxHeapify(i);
       }
     }
@@ -52,7 +52,7 @@ class MyMaxHeap {
     [this.arr[len - 1], this.arr[index]] = [this.arr[index], this.arr[len - 1]];
     this.arr.pop();
 
-    for (let i = this.arr.length / 2 - 1; i >= 0; i--) this.maxHeapify(i);
+    for (let i = parseInt(this.arr.length / 2 - 1);; i >= 0; i--) this.maxHeapify(i);
   }
 
   findMax() {
