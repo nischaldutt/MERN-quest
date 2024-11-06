@@ -1,4 +1,4 @@
-class MyMinHeap {
+class MinHeap {
   constructor() {
     this.arr = [];
   }
@@ -72,3 +72,17 @@ class MyMinHeap {
     return this.arr.length;
   }
 }
+
+const min = new MinHeap();
+min.insert(4);
+min.insert(1);
+min.insert(8);
+min.insert(6);
+min.insert(2);
+min.insert(0);
+
+console.log(min);
+console.log(min.findMin());
+
+min.remove(2);
+console.log(min);
