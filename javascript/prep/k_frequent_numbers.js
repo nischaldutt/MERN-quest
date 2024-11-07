@@ -104,3 +104,27 @@ function topKFrequentNumbers(arr, k) {
 }
 
 console.log(topKFrequentNumbers([1, 2, 1, 1, 2, 3, 4], 2));
+
+function frequencySort(arr) {
+  const obj = {};
+  const len = arr.length;
+  for (let i = 0; i < len; i++) {
+    if (obj[arr[i]] === undefined) obj[arr[i]] = 1;
+    else obj[arr[i]]++;
+  }
+
+  const minHeap = new MinHeap();
+  for (let key in obj) {
+    minHeap.insert({ frequency: obj[key], value: key });
+  }
+
+  const result = [];
+  while (!minHeap.isEmpty()) {
+    const top = minHeap.findMin();
+    result.push(top.value);
+    minHeap.remove(top.value);
+  }
+  return result.reverse();
+}
+
+console.log(frequencySort([1, 2, 1, 1, 3, 4, 5, 2]));
