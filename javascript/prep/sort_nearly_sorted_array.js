@@ -64,7 +64,7 @@ class MinHeap {
     else return this.arr[0];
   }
 
-  ifEmpty() {
+  isEmpty() {
     return this.arr.length === 0;
   }
 
@@ -73,16 +73,42 @@ class MinHeap {
   }
 }
 
-const min = new MinHeap();
-min.insert(4);
-min.insert(1);
-min.insert(8);
-min.insert(6);
-min.insert(2);
-min.insert(0);
+// const min = new MinHeap();
+// min.insert(4);
+// min.insert(1);
+// min.insert(8);
+// min.insert(6);
+// min.insert(2);
+// min.insert(0);
 
-console.log(min);
-console.log(min.findMin());
+// console.log(min);
+// console.log(min.findMin());
 
-min.remove(2);
-console.log(min);
+// min.remove(2);
+// console.log(min);
+
+function sortNearlySortedArray(arr, k) {
+  const minHeap = new MinHeap();
+  const len = arr.length;
+  const result = [];
+  let i = 0;
+
+  while (i < len) {
+    minHeap.insert(arr[i]);
+    if (minHeap.size() > k) {
+      const top = minHeap.findMin();
+      result.push(top);
+      minHeap.remove(top);
+    }
+    i++;
+  }
+
+  while (!minHeap.isEmpty()) {
+    const top = minHeap.findMin();
+    result.push(top);
+    minHeap.remove(top);
+  }
+  return result;
+}
+
+console.log(sortNearlySortedArray([6, 5, 3, 2, 8, 10, 9], 3));
