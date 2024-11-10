@@ -28,7 +28,6 @@ class MaxHeap {
         this.arr[index],
         this.arr[largestIndex],
       ];
-      largestIndex = index;
       this.maxHeapify(largestIndex);
     }
   }
