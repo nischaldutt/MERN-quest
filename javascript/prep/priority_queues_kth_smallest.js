@@ -70,7 +70,7 @@ function kthSmallest(arr, k) {
   for (let i = 0; i < len; i++) {
     maxHeap.insert(arr[0]);
     if (maxHeap.size() > k) {
-      maxHeap.remove();
+      maxHeap.remove(maxHeap.findMax());
     }
   }
   return maxHeap.findMax();
