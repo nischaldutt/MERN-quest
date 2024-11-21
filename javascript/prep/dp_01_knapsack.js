@@ -51,7 +51,7 @@ function recuriveMemoisedSolve(matrix, weights, profits, capacity, n) {
 
 // console.log(recursiveMemoisedKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 13));
 
-// top down iterative
+// 3. top down iterative
 function iterativeKnapsack(weights, profits, capacity) {
   const rows = weights.length + 1;
   const cols = capacity + 1;
@@ -76,7 +76,7 @@ function iterativeKnapsack(weights, profits, capacity) {
 
 // console.log(iterativeKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7));
 
-// space optimised top down iterative
+// 4. space optimised top down iterative
 function spaceOptimisedIterativeKnapssack(weights, profits, capacity) {
   const dp = new Array(capacity + 1).fill(0);
 
