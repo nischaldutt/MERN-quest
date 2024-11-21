@@ -74,4 +74,19 @@ function iterativeKnapsack(weights, profits, capacity) {
   return matrix[rows - 1][cols - 1];
 }
 
-console.log(iterativeKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7));
+// console.log(iterativeKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7));
+
+// space optimised top down iterative
+function spaceOptimisedIterativeKnapssack(weights, profits, capacity) {
+  const dp = new Array(capacity + 1).fill(0);
+
+  for (let i = 0; i < weights.length; i++) {
+    for (let j = capacity; j >= weights[i]; j--) {
+      dp[j] = Math.max(dp[j], profits[i] + dp[j - weights[i]]);
+    }
+    console.log(dp);
+  }
+  return dp[capacity];
+}
+
+console.log(spaceOptimisedIterativeKnapssack([1, 3, 4, 5], [1, 4, 5, 7], 7));
