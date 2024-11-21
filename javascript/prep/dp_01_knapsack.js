@@ -82,6 +82,13 @@ function spaceOptimisedIterativeKnapssack(weights, profits, capacity) {
 
   for (let i = 0; i < weights.length; i++) {
     for (let j = capacity; j >= weights[i]; j--) {
+      // j >= weights[i];: The loop runs as long as j is greater than
+      // or equal to the weight of the current item weights[i].
+      // This ensures that we only try to place the item in knapsack
+      // capacities that can hold it. For example, if the current item
+      // weighs 5 units, we don’t need to consider knapsacks with
+      // capacities less than 5, because they can’t fit the item.
+
       dp[j] = Math.max(dp[j], profits[i] + dp[j - weights[i]]);
     }
     console.log(dp);
