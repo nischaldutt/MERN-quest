@@ -103,11 +103,8 @@ function spaceOptimisedIterativeKnapssack(weights, profits, capacity) {
 function optimisedIterativeKnapsack(weights, profits, capacity) {
   const len = weights.length;
   let prev = new Array(capacity + 1).fill(0);
-  for (let i = 0; i <= capacity; i++) {
-    if (weights[0] <= i) prev[i] = profits[0];
-  }
 
-  for (let i = 1; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     let curr = new Array(capacity + 1).fill(0);
     for (let j = 0; j <= capacity; j++) {
       if (weights[i] <= j)
