@@ -70,11 +70,9 @@ function iterativeCoinChangeMaxWays(coins, sum) {
 function spaceOptimisedIterativeCoinChangeMaxWays(coins, sum) {
   const len = coins.length;
   let prev = new Array(sum + 1).fill(0);
-  for (let i = 0; i <= sum; i++) {
-    if (i % coins[0] === 0) prev[i] = 1;
-  }
+  prev[0] = 1;
 
-  for (let i = 1; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     let curr = new Array(sum + 1).fill(0);
     for (let j = 0; j <= sum; j++) {
       if (coins[i] <= j) curr[j] = curr[j - coins[i]] + prev[j];
