@@ -72,7 +72,7 @@ function iterativeSubsetSum(arr, sum) {
   return matrix[n][sum];
 }
 
-// console.log(iterativeSubsetSum([2, 3, 7, 8, 10], 11));
+console.log(iterativeSubsetSum([2, 3, 7, 8, 10], 11));
 
 // 4. space optimised top down iterative
 function spaceOptimisedIterativeSubsetSum(arr, sum) {
@@ -88,4 +88,23 @@ function spaceOptimisedIterativeSubsetSum(arr, sum) {
   return dp[sum];
 }
 
-console.log(spaceOptimisedIterativeSubsetSum([2, 3, 7, 8, 10], 11));
+// console.log(spaceOptimisedIterativeSubsetSum([2, 3, 7, 8, 10], 11));
+
+// 5. space optimised iterative 2 rows solutions
+function optimisedIterativeSubsetSum(arr, sum) {
+  const len = arr.length;
+  let prev = new Array(sum + 1).fill(false);
+  prev[0] = true;
+
+  for (let i = 0; i < len; i++) {
+    let curr = new Array(sum + 1).fill(false);
+    for (let j = 0; j <= sum; j++) {
+      if (arr[i] <= j) curr[j] = prev[j - arr[i]] || prev[j];
+      else curr[j] = prev[j];
+    }
+    prev = [...curr];
+  }
+  return prev[sum];
+}
+
+console.log(optimisedIterativeSubsetSum([2, 3, 7, 8, 10], 11));
