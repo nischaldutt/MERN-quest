@@ -75,6 +75,7 @@ function iterativeKnapsack(weights, profits, capacity) {
 }
 
 // console.log(iterativeKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7));
+// console.log(iterativeKnapsack([3, 8, 6], [7, 8, 4], 10));
 
 // 4. space optimised top down iterative
 function spaceOptimisedIterativeKnapssack(weights, profits, capacity) {
@@ -96,4 +97,27 @@ function spaceOptimisedIterativeKnapssack(weights, profits, capacity) {
   return dp[capacity];
 }
 
-console.log(spaceOptimisedIterativeKnapssack([1, 3, 4, 5], [1, 4, 5, 7], 7));
+// console.log(spaceOptimisedIterativeKnapssack([1, 3, 4, 5], [1, 4, 5, 7], 7));
+
+// 5. space optimised iterative 2 rows solution
+function optimisedIterativeKnapsack(weights, profits, capacity) {
+  const len = weights.length;
+  let prev = new Array(capacity + 1).fill(0);
+  for (let i = 0; i <= capacity; i++) {
+    if (weights[0] <= i) prev[i] = profits[0];
+  }
+
+  for (let i = 1; i < len; i++) {
+    let curr = new Array(capacity + 1).fill(0);
+    for (let j = 0; j <= capacity; j++) {
+      if (weights[i] <= j)
+        curr[j] = Math.max(profits[i] + prev[j - weights[i]], prev[j]);
+      else curr[j] = prev[j];
+    }
+    prev = [...curr];
+  }
+  return prev[capacity];
+}
+
+console.log(optimisedIterativeKnapsack([1, 3, 4, 5], [1, 4, 5, 7], 7));
+console.log(optimisedIterativeKnapsack([3, 8, 6], [7, 8, 4], 10));
