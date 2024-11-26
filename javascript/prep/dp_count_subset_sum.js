@@ -72,4 +72,23 @@ function iterativeSpaceOptimisedCountSubsetSum(arr, sum) {
   return dp[sum];
 }
 
-console.log(iterativeSpaceOptimisedCountSubsetSum([2, 3, 5, 6, 8, 10], 10));
+// console.log(iterativeSpaceOptimisedCountSubsetSum([2, 3, 5, 6, 8, 10], 10));
+
+// 5. space optimised iterative 2 rows solution
+function optimisedIterativeCountSubsetSum(arr, sum) {
+  const len = arr.length;
+  let prev = new Array(sum + 1).fill(0);
+  prev[0] = 1;
+
+  for (let i = 0; i < len; i++) {
+    let curr = new Array(sum + 1).fill(0);
+    for (let j = 0; j <= sum; j++) {
+      if (arr[i] <= j) curr[j] = prev[j - arr[i]] + prev[j];
+      else curr[j] = prev[j];
+    }
+    prev = [...curr];
+  }
+  return prev[sum];
+}
+
+console.log(optimisedIterativeCountSubsetSum([2, 3, 5, 6, 8, 10], 10));
