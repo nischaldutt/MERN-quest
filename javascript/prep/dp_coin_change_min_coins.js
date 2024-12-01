@@ -88,15 +88,7 @@ function optimisedIterativeMinCoins(coins, sum) {
     let curr = new Array(sum + 1).fill(Infinity);
     for (let j = 0; j <= sum; j++) {
       if (coins[i] <= j) {
-        if (i === 1)
-          console.log(
-            curr[j - coins[i]],
-            " ffdfd ",
-            prev[j],
-            "==>",
-            Math.min(1 + curr[j - coins[i]], prev[j])
-          );
-        curr[j] = Math.min(1 + curr[j - coins[i]], prev[j]);
+        if (i === 1) curr[j] = Math.min(1 + curr[j - coins[i]], prev[j]);
       } else curr[j] = prev[j];
     }
     prev = [...curr];
