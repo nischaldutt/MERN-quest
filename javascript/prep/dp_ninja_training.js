@@ -125,7 +125,7 @@ function optimisedNinjaTraining(matrix) {
         curr[task] = maxPoints;
       }
     }
-    prev = curr;
+    prev = [...curr];
   }
   return prev[totalTasks - 1];
 }
