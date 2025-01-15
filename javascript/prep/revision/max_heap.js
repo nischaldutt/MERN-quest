@@ -39,7 +39,7 @@ class OptimisedMaxHeap {
     const len = this.arr.length;
     let index = len - 1;
     // 2. bubble up the newly inserted node until it reaches its appropriate position
-    let parentIndex = Math.floor((len - 1) / 2);
+    let parentIndex = Math.floor((index - 1) / 2);
     while (index > 0 && this.arr[parentIndex] < this.arr[index]) {
       [this.arr[parentIndex], this.arr[index]] = [
         this.arr[index],
