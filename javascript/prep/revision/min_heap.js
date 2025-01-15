@@ -33,9 +33,11 @@ class MinHeap {
   }
 
   insert(value) {
+    // push the element to the end of array
     this.arr.push(value);
     const len = this.arr.length;
     let index = len - 1;
+    // calculate the parent and bubble-up the newly inserted node to its correct position
     let parentIndex = Math.floor((index - 1) / 2);
     while (index > 0 && this.arr[index] < this.arr[parentIndex]) {
       [this.arr[parentIndex], this.arr[index]] = [
@@ -48,11 +50,13 @@ class MinHeap {
   }
 
   remove(value) {
+    // find index of the array and pop it off
     const index = this.arr.indexOf(value);
     if (index === -1) return;
     const len = this.arr.length;
     [this.arr[len - 1], this.arr[index]] = [this.arr[index], this.arr[len - 1]];
     this.arr.pop();
+    // re-minheapify
     this.minHeapify(index);
   }
 
