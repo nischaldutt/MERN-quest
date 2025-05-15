@@ -36,4 +36,54 @@ class Graph {
       delete this.adjacencyList[vertex];
     }
   }
+
+  print() {
+    return this.adjacencyList;
+  }
+
+  bfs(root) {
+    const visited = new Set();
+    const queue = [root];
+
+    while (queue.length > 0) {
+      const node = queue.shift();
+      if (!visited.has(node)) {
+        console.log(node);
+        visited.add(node);
+        for (let neighbor of this.adjacencyList[node]) {
+          if (!visited.has(neighbor)) queue.push(neighbor);
+        }
+      }
+    }
+  }
+
+  dfs(root, visited = new Set()) {
+    console.log(root);
+    visited.add(root);
+
+    for (const neighbor of this.adjacencyList[root]) {
+      if (!visited.has(neighbor)) this.dfs(neighbor, visited);
+    }
+  }
 }
+
+const myGraph = new Graph();
+myGraph.addVertex("a");
+myGraph.addVertex("b");
+myGraph.addVertex("c");
+myGraph.addVertex("d");
+myGraph.addVertex("e");
+myGraph.addVertex("f");
+
+myGraph.addEdge("a", "b");
+myGraph.addEdge("a", "c");
+myGraph.addEdge("b", "d");
+myGraph.addEdge("b", "e");
+myGraph.addEdge("c", "f");
+myGraph.addEdge("e", "f");
+
+console.log(myGraph.print());
+
+myGraph.bfs("a");
+console.log("===");
+myGraph.dfs("a");
