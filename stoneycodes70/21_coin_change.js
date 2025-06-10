@@ -51,11 +51,12 @@ function iterativeCoinChange(coins, amount) {
   const len = coins.length;
   const rows = len + 1;
   const cols = amount + 1;
-  const matrix = Array.from({ length: rows }, () => new Array(cols).fill(-1));
+  const matrix = Array.from({ length: rows }, () =>
+    new Array(cols).fill(Infinity)
+  );
 
   for (let i = 0; i < rows; i++) {
-    for (let j = 0; i < cols; j++) {
-      if (i === 0) matrix[i][j] = -1;
+    for (let j = 0; j < cols; j++) {
       if (j === 0) matrix[i][j] = 0;
     }
   }
@@ -63,13 +64,39 @@ function iterativeCoinChange(coins, amount) {
   for (let i = 1; i < rows; i++) {
     for (let j = 1; j < cols; j++) {
       if (coins[i - 1] <= j) {
-        matrix[i][j] = Math.min(1 + matrix[i][amount - j], matrix[i - 1][j]);
+        matrix[i][j] = Math.min(
+          1 + matrix[i][j - coins[i - 1]],
+          matrix[i - 1][j]
+        );
       } else matrix[i][j] = matrix[i - 1][j];
     }
   }
-  return matrix[rows][cols];
+  return matrix[len][amount] === Infinity ? -1 : matrix[len][amount];
 }
 
-console.log(iterativeCoinChange([1, 2, 5], 11));
-console.log(iterativeCoinChange([2], 3));
-console.log(iterativeCoinChange([1], 0));
+// console.log(iterativeCoinChange([1, 2, 5], 11));
+// console.log(iterativeCoinChange([1, 2, 3], 5));
+// console.log(iterativeCoinChange([2], 3));
+// console.log(iterativeCoinChange([1], 0));
+
+function optimisedCoinChange(coins, amount) {
+  const len = coins.length;
+  const prev = new Array(amount + 1).fill(Infinity);
+  const curr = new Array(amount + 1).fill(Infinity);
+  prev[0] = curr[0] = 0;
+
+  for (let i = 1; i < len + 1; i++) {
+    for (let j = 1; j < amount + 1; j++) {
+      if (coins[i - 1] <= j)
+        curr[j] = Math.min(1 + curr[j - coins[i - 1]], prev[j]);
+      else curr[j] = prev[j];
+    }
+    prev.splice(0, amount + 1, ...curr);
+  }
+  return prev[amount] === Infinity ? -1 : prev[amount];
+}
+
+console.log(optimisedCoinChange([1, 2, 5], 11));
+console.log(optimisedCoinChange([1, 2, 3], 5));
+console.log(optimisedCoinChange([2], 3));
+console.log(optimisedCoinChange([1], 0));
