@@ -1,4 +1,4 @@
-var combinationSum = function (candidates, target) {
+var combinationSum0 = function (candidates, target) {
   const len = candidates.length;
   const result = [];
 
@@ -22,4 +22,4 @@ var combinationSum = function (candidates, target) {
   return result;
 };
 
-console.log(combinationSum([2, 3, 6, 7], 7));
+console.log(combinationSum0([2, 3, 6, 7], 7));
